@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Quicksand:wght@300..700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Caveat", cursive, sans-serif;
+  --font-sans: "Quicksand", sans-serif;
+}
+
+@keyframes bob {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes heartbeat {
+  0%, 100% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(1.08);
+  }
+  40% {
+    transform: scale(1.03);
+  }
+  60% {
+    transform: scale(1.12);
+  }
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(105vh) translateX(0) rotate(0deg) scale(0.8);
+    opacity: 0;
+  }
+  10% {
+    opacity: var(--float-opacity, 0.25);
+  }
+  90% {
+    opacity: var(--float-opacity, 0.25);
+  }
+  100% {
+    transform: translateY(-10vh) translateX(var(--drift, 30px)) rotate(var(--rotation, 360deg)) scale(1.2);
+    opacity: 0;
+  }
+}
+
+@keyframes sparkle {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(0.8);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
+
+@keyframes wave {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(15deg);
+  }
+}
+
+@keyframes particleShoot {
+  0% {
+    transform: translate(0, 0) scale(0) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+    transform: translate(calc(var(--tx) * 0.25), calc(var(--ty) * 0.25)) scale(1.3) rotate(calc(var(--rot) * 0.25));
+  }
+  100% {
+    transform: translate(var(--tx), var(--ty)) scale(0.5) rotate(var(--rot));
+    opacity: 0;
+  }
+}
+
+.animate-bob {
+  animation: bob 3s ease-in-out infinite;
+}
+
+.animate-heartbeat {
+  animation: heartbeat 1.5s infinite;
+}
+
+.animate-float {
+  animation: floatUp var(--duration, 20s) linear infinite;
+  animation-delay: var(--delay, 0s);
+}
+
+.animate-sparkle {
+  animation: sparkle 2s ease-in-out infinite;
+}
+
+.animate-wave {
+  animation: wave 2.5s ease-in-out infinite;
+  transform-origin: bottom right;
+}
+
+.animate-particle {
+  animation: particleShoot var(--duration, 2.2s) cubic-bezier(0.1, 0.8, 0.3, 1) forwards;
+}
+
+body {
+  font-family: "Quicksand", sans-serif;
+  background-color: #fffdf9;
+  color: #374151;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+/* Custom scrollbar for beautiful premium feel */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #fffdf9;
+}
+::-webkit-scrollbar-thumb {
+  background: #fbcfe8;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #f472b6;
+}

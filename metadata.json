@@ -1,0 +1,6 @@
+{
+  "name": "For Numa 🤍",
+  "description": "A beautiful, interactive birthday love letter and friendship memory experience for Zarin Tasnim Nubaha (Numa).",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
